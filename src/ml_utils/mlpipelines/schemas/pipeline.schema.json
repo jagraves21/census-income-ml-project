@@ -1,0 +1,85 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://example.com/Pipeline",
+
+	"type": "object",
+	"oneOf": [
+		{ "$ref": "#/$defs/Pipeline" },
+		{ "$ref": "#/$defs/ColumnTransformer" },
+		{ "$ref": "#/$defs/EstimatorSpec" }
+	],
+
+	"$defs": {
+		"Pipeline": {
+			"type": "object",
+			"required": ["name", "steps"],
+			"properties": {
+				"name": { "type": "string" },
+				"params": {
+					"type": "object",
+					"additionalProperties": true
+				},
+				"steps": {
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"$ref": "#"
+					}
+				}
+			},
+			"additionalProperties": false
+		},
+
+		"EstimatorSpec": {
+			"type": "object",
+			"required": ["name"],
+			"properties": {
+				"name": { "type": "string" },
+				"kind": { "type": "string" },
+				"params": {
+					"type": "object",
+					"additionalProperties": true
+				}
+			},
+			"additionalProperties": false
+		},
+
+		"ColumnTransformer": {
+			"type": "object",
+			"required": ["name", "transformers"],
+			"properties": {
+				"name": { "type": "string" },
+				"params": {
+					"type": "object",
+					"additionalProperties": true
+				},
+				"transformers": {
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"required": ["name", "transformer", "columns"],
+						"properties": {
+							"name": { "type": "string" },
+							"columns": {
+								"oneOf": [
+									{ "type": "string" },
+									{
+										"type": "array",
+										"items": { "type": "string" }
+									}
+								]
+							},
+							"transformer": {
+								"$ref": "#"
+							}
+						},
+						"additionalProperties": false
+					}
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}
+
