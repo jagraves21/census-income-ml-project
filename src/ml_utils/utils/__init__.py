@@ -1,4 +1,5 @@
 from .typing import (
+	is_float,
 	is_dict,
 	is_list,
 	is_set,
@@ -26,6 +27,7 @@ from .dataframe import (
 
 
 __all__ = [
+	"is_float",
 	"is_dict",
 	"is_list",
 	"is_set",
