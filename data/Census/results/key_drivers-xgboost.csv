@@ -1,0 +1,258 @@
+,feature_raw,feature_type,feature_name,feature_value,mean_abs_shap,mean_shap,positive_ratio
+0,numeric__weeks worked in year,numeric,weeks worked in year,,0.9093038,-0.44955415,0.39496198433263335
+1,numeric__age,numeric,age,,0.8946762,-0.6221402,0.4737849771705518
+2,categorical__tax filer stat_Nonfiler,categorical,tax filer stat,Nonfiler,0.59882486,-0.45793793,0.6236323631861991
+3,categorical__sex_Female,categorical,sex,Female,0.30316165,-0.08185649,0.478837026307744
+4,numeric__dividends from stocks,numeric,dividends from stocks,,0.23497933,-0.10008326,0.10328132596242037
+5,numeric__capital gains,numeric,capital gains,,0.14384125,-0.06382316,0.02062920064353483
+6,categorical__education_Bachelors degree(BA AB BS),categorical,education,Bachelors degree(BA AB BS),0.14353515,-0.0631659,0.09979801827358249
+7,categorical__detailed household summary in household_Householder,categorical,detailed household summary in household,Householder,0.14065357,-0.06447475,0.37814186835602914
+8,categorical__num persons worked for employer_6,categorical,num persons worked for employer,6,0.13091266,-0.05779118,0.1831718648977812
+9,categorical__major occupation code_Executive admin and managerial,categorical,major occupation code,Executive admin and managerial,0.11827234,-0.04784599,0.06262435909644502
+10,categorical__education_Masters degree(MA MS MEng MEd MSW MBA),categorical,education,Masters degree(MA MS MEng MEd MSW MBA),0.100228205,-0.055792924,0.03278318790314901
+11,categorical__major occupation code_Professional specialty,categorical,major occupation code,Professional specialty,0.096402526,-0.03477103,0.07023751647679716
+12,categorical__education_High school graduate,categorical,education,High school graduate,0.07585228,-0.007034881,0.7573863664840645
+13,categorical__major occupation code_Sales,categorical,major occupation code,Sales,0.064850464,-0.02258642,0.059055848197952114
+14,categorical__major occupation code_Other service,categorical,major occupation code,Other service,0.06415392,-0.024309717,0.9393453386326388
+15,numeric__capital losses,numeric,capital losses,,0.06103142,-0.03154926,0.013717716754459385
+16,categorical__marital stat_Never married,categorical,marital stat,Never married,0.059439342,-0.041341074,0.5655137502944523
+17,categorical__major industry code_Retail trade,categorical,major industry code,Retail trade,0.05537667,-0.006279113,0.9144108699247706
+18,categorical__major occupation code_Adm support including clerical,categorical,major occupation code,Adm support including clerical,0.05518544,-0.0065308926,0.9256426577387068
+19,categorical__num persons worked for employer_0,categorical,num persons worked for employer,0,0.054429386,-0.033052277,0.5189376663342071
+20,categorical__num persons worked for employer_1,categorical,num persons worked for employer,1,0.051704887,0.008929085,0.8841938022182906
+21,categorical__education_Prof school degree (MD DDS DVM LLB JD),categorical,education,Prof school degree (MD DDS DVM LLB JD),0.051434312,-0.028800376,0.008986432641850815
+22,categorical__marital stat_Married-civilian spouse present,categorical,marital stat,Married-civilian spouse present,0.050060067,-0.028781835,0.4120076382171479
+23,categorical__major industry code_Education,categorical,major industry code,Education,0.047851566,0.012379471,0.9584859890839652
+24,categorical__sex_Male,categorical,sex,Male,0.042878255,-0.015860422,0.47883201435423484
+25,categorical__class of worker_Self-employed-incorporated,categorical,class of worker,Self-employed-incorporated,0.041585956,-0.025031136,0.01636402820727435
+26,categorical__education_Doctorate degree(PhD EdD),categorical,education,Doctorate degree(PhD EdD),0.039034527,-0.022857787,0.006330097282017612
+27,numeric__wage per hour,numeric,wage per hour,,0.03685573,-0.012561649,0.7448765305253029
+28,categorical__detailed household summary in household_Child 18 or older,categorical,detailed household summary in household,Child 18 or older,0.03400882,-0.017039688,0.9270159330002055
+29,categorical__education_10th grade,categorical,education,10th grade,0.031146877,-0.014895591,0.9621246673315859
+30,categorical__full or part time employment stat_Full-time schedules,categorical,full or part time employment stat,Full-time schedules,0.028518645,-0.013992703,0.20437744019486476
+31,categorical__tax filer stat_Joint both under 65,categorical,tax filer stat,Joint both under 65,0.027486928,-0.015303416,0.28777133463309995
+32,categorical__race_Black,categorical,race,Black,0.02588969,-0.00544821,0.8759441267422804
+33,categorical__detailed household summary in household_Spouse of householder,categorical,detailed household summary in household,Spouse of householder,0.023948563,-0.015279016,0.209935696636478
+34,categorical__education_7th and 8th grade,categorical,education,7th and 8th grade,0.023263635,-0.011307627,0.9598692882524822
+35,categorical__education_9th grade,categorical,education,9th grade,0.022494888,-0.013549753,0.968775529638187
+36,categorical__class of worker_State government,categorical,class of worker,State government,0.021541124,0.006866801,0.9786841617257158
+37,categorical__education_11th grade,categorical,education,11th grade,0.019553889,-0.008508261,0.9655227718107687
+38,categorical__own business or self employed_1,categorical,own business or self employed,1,0.017861709,-0.009236228,0.013522250567603734
+39,categorical__major occupation code_Handlers equip cleaners etc ,categorical,major occupation code,Handlers equip cleaners etc ,0.016353087,-0.0037153158,0.9792705602862828
+40,categorical__major industry code_Manufacturing-durable goods,categorical,major industry code,Manufacturing-durable goods,0.01565979,-0.007205598,0.04518276088471004
+41,categorical__major occupation code_Machine operators assmblrs & inspctrs,categorical,major occupation code,Machine operators assmblrs & inspctrs,0.015587216,0.0004141183,0.9680036887977828
+42,categorical__major industry code_Social services,categorical,major industry code,Social services,0.0153477425,-0.00017627706,0.987224530505255
+43,categorical__country of birth self_Mexico,categorical,country of birth self,Mexico,0.014698317,-0.005958476,0.9710960641129093
+44,categorical__education_5th or 6th grade,categorical,education,5th or 6th grade,0.011944512,-0.0056019705,0.9835758283506162
+45,categorical__class of worker_Local government,categorical,class of worker,Local government,0.0112061165,0.0036349085,0.9580900447567449
+46,categorical__major industry code_Finance insurance and real estate,categorical,major industry code,Finance insurance and real estate,0.010408401,-0.0047618956,0.030803466267046907
+47,categorical__major occupation code_Protective services,categorical,major occupation code,Protective services,0.010273097,-0.0038148144,0.008384998220756505
+48,categorical__fill inc questionnaire for veteran's admin_No,categorical,fill inc questionnaire for veteran's admin,No,0.009657749,-0.0031563924,0.007984041940026965
+49,categorical__num persons worked for employer_4,categorical,num persons worked for employer,4,0.008757055,-0.0028425455,0.07207690341464393
+50,categorical__live in this house 1 year ago_No,categorical,live in this house 1 year ago,No,0.00813819,-0.001677522,0.6694516421665673
+51,categorical__tax filer stat_Single,categorical,tax filer stat,Single,0.007936733,-0.0036850963,0.28643815499967423
+52,categorical__country of birth father_Mexico,categorical,country of birth father,Mexico,0.0076537514,-0.003830789,0.9456253163795653
+53,categorical__detailed household summary in household_Nonrelative of householder,categorical,detailed household summary in household,Nonrelative of householder,0.0070600547,-0.0037083237,0.0404615006791197
+54,categorical__detailed household summary in household_Child under 18 never married,categorical,detailed household summary in household,Child under 18 never married,0.006002263,-0.0056907246,0.7472672323491527
+55,categorical__class of worker_Federal government,categorical,class of worker,Federal government,0.0057352027,-0.0027662683,0.01529147015632283
+56,categorical__citizenship_Foreign born- Not a citizen of U S ,categorical,citizenship,Foreign born- Not a citizen of U S ,0.005623965,-0.0010432064,0.44387363862812806
+57,categorical__race_White,categorical,race,White,0.004838879,-0.0008227411,0.8292627917583436
+58,categorical__major industry code_Personal services except private HH,categorical,major industry code,Personal services except private HH,0.0047419765,-0.000826334,0.9455651729374558
+59,categorical__major occupation code_Farming forestry and fishing,categorical,major occupation code,Farming forestry and fishing,0.0047285887,-0.00095496513,0.6523608807004706
+60,categorical__class of worker_Self-employed-not incorporated,categorical,class of worker,Self-employed-not incorporated,0.004636718,-0.0016073555,0.08585476361121275
+61,categorical__num persons worked for employer_2,categorical,num persons worked for employer,2,0.0045980145,0.00032303584,0.891816983505661
+62,categorical__class of worker_Private,categorical,class of worker,Private,0.0042482205,-0.0009234407,0.6223843867624284
+63,categorical__major industry code_Mining,categorical,major industry code,Mining,0.0033956731,-0.001497867,0.0028217298256341373
+64,categorical__live in this house 1 year ago_Yes,categorical,live in this house 1 year ago,Yes,0.0025493312,-0.00088516425,0.4032567673902257
+65,categorical__tax filer stat_Head of household,categorical,tax filer stat,Head of household,0.0023896112,-0.00046279022,0.03753953178330318
+66,categorical__major occupation code_Technicians and related support,categorical,major occupation code,Technicians and related support,0.0020818845,-0.0008000278,0.016504362905529688
+67,categorical__education_Some college but no degree,categorical,education,Some college but no degree,0.0020742447,9.726603e-05,0.7680518035514703
+68,categorical__own business or self employed_0,categorical,own business or self employed,0,0.002060842,-0.00034957533,0.10393287991860588
+69,categorical__major industry code_Utilities and sanitary services,categorical,major industry code,Utilities and sanitary services,0.002000017,-0.0009899919,0.005934152954797192
+70,categorical__detailed household summary in household_Other relative of householder,categorical,detailed household summary in household,Other relative of householder,0.0019237894,-0.0010646367,0.9365837522491142
+71,categorical__member of a labor union_No,categorical,member of a labor union,No,0.0019073205,0.0006240508,0.8976809691113306
+72,categorical__member of a labor union_Yes,categorical,member of a labor union,Yes,0.0016643354,-0.0006065407,0.017130857094169595
+73,categorical__full or part time employment stat_Not in labor force,categorical,full or part time employment stat,Not in labor force,0.0016632985,-9.868233e-05,0.13714208387003002
+74,categorical__major industry code_Transportation,categorical,major industry code,Transportation,0.0016577549,-0.0005641252,0.02813209504668635
+75,categorical__tax filer stat_Joint both 65+,categorical,tax filer stat,Joint both 65+,0.0016468132,-0.0007891105,0.04356389990126452
+76,categorical__own business or self employed_2,categorical,own business or self employed,2,0.001585712,0.00023135422,0.9165509740731645
+77,categorical__major occupation code_Transportation and material moving,categorical,major occupation code,Transportation and material moving,0.0015455482,0.0003912265,0.9645805245510543
+78,categorical__enroll in edu inst last wk_High school,categorical,enroll in edu inst last wk,High school,0.0014064126,-0.00052704307,0.034542383584849866
+79,categorical__num persons worked for employer_5,categorical,num persons worked for employer,5,0.0013579087,-0.0004235572,0.032447387018038024
+80,categorical__major industry code_Other professional services,categorical,major industry code,Other professional services,0.0013478736,-0.0005988881,0.02592182354916476
+81,categorical__major industry code_Construction,categorical,major industry code,Construction,0.0012153449,-0.00031577572,0.047969407035780336
+82,categorical__country of birth self_England,categorical,country of birth self,England,0.0011361772,-0.00019594617,0.002290462753667497
+83,categorical__country of birth self_Vietnam,categorical,country of birth self,Vietnam,0.0010005537,-0.0003336077,0.0019596738220656264
+84,categorical__full or part time employment stat_PT for non-econ reasons usually FT,categorical,full or part time employment stat,PT for non-econ reasons usually FT,0.0009967182,-0.00026512664,0.036607308430607
+85,categorical__marital stat_Divorced,categorical,marital stat,Divorced,0.0009464224,-0.00021617395,0.0810282523819309
+86,categorical__major industry code_Public administration,categorical,major industry code,Public administration,0.00094416016,-0.0007367435,0.06527067054925999
+87,categorical__major industry code_Medical except hospital,categorical,major industry code,Medical except hospital,0.0008466455,-0.0002742023,0.7129253269046676
+88,categorical__education_1st 2nd 3rd or 4th grade,categorical,education,1st 2nd 3rd or 4th grade,0.00082020287,-0.00039412657,0.9909834956370944
+89,categorical__major industry code_Communications,categorical,major industry code,Communications,0.0008124072,-0.00024286345,0.007071866401367261
+90,categorical__country of birth father_United-States,categorical,country of birth father,United-States,0.0007827888,-9.263422e-05,0.738787007011723
+91,categorical__marital stat_Widowed,categorical,marital stat,Widowed,0.00078266405,0.00010980362,0.0852984367717005
+92,categorical__country of birth mother_United-States,categorical,country of birth mother,United-States,0.0007270804,0.00018455037,0.6052685655287862
+93,categorical__country of birth father_Ireland,categorical,country of birth father,Ireland,0.00069949543,-0.00017624085,0.002691419034397037
+94,categorical__major occupation code_Precision production craft & repair,categorical,major occupation code,Precision production craft & repair,0.0006691667,-0.00036054495,0.0356450133568561
+95,categorical__country of birth self_United-States,categorical,country of birth self,United-States,0.0006505438,-0.00012502517,0.814778246116989
+96,categorical__citizenship_Foreign born- U S citizen by naturalization,categorical,citizenship,Foreign born- U S citizen by naturalization,0.00064904697,-0.00018213404,0.029530430075730616
+97,categorical__major industry code_Business and repair services,categorical,major industry code,Business and repair services,0.0006359646,-0.00015948861,0.04945795722798875
+98,categorical__major industry code_Hospital services,categorical,major industry code,Hospital services,0.00060792844,0.00015068414,0.9500007517930263
+99,categorical__country of birth self_Scotland,categorical,country of birth self,Scotland,0.0005153628,-0.00011536478,0.0003758965131839437
+100,categorical__num persons worked for employer_3,categorical,num persons worked for employer,3,0.0005152501,-4.073819e-05,0.8445241901936118
+101,categorical__education_12th grade no diploma,categorical,education,12th grade no diploma,0.00049943686,-0.00014482484,0.9893445868396125
+102,categorical__major industry code_Agriculture,categorical,major industry code,Agriculture,0.00044777425,-9.650987e-05,0.1893115079464523
+103,categorical__race_Asian or Pacific Islander,categorical,race,Asian or Pacific Islander,0.00042171023,-0.00012965183,0.5168025741393223
+104,categorical__country of birth mother_Mexico,categorical,country of birth mother,Mexico,0.00042100306,0.0002237621,0.04902191727269538
+105,categorical__country of birth mother_Poland,categorical,country of birth mother,Poland,0.00038286764,-5.4503278e-05,0.005563268395122367
+106,categorical__tax filer stat_Joint one under 65 & one 65+,categorical,tax filer stat,Joint one under 65 & one 65+,0.00034443045,0.00014967052,0.972679841421791
+107,categorical__country of birth father_Vietnam,categorical,country of birth father,Vietnam,0.00031831156,-6.770703e-05,0.002290462753667497
+108,categorical__country of birth father_El-Salvador,categorical,country of birth father,El-Salvador,0.00031521573,-0.00013666165,0.9950782616540449
+109,categorical__major industry code_Private household services,categorical,major industry code,Private household services,0.0002811878,-0.00012611017,0.9952637039338823
+110,categorical__education_Associates degree-occup /vocational,categorical,education,Associates degree-occup /vocational,0.00024657886,4.133117e-06,0.610305578805451
+111,categorical__reason for unemployment_Other job loser,categorical,reason for unemployment,Other job loser,0.0002456973,-4.5700992e-05,0.01269026628508994
+112,categorical__country of birth father_Iran,categorical,country of birth father,Iran,0.00023090979,-0.00013849504,0.001167785167624785
+113,categorical__country of birth mother_Japan,categorical,country of birth mother,Japan,0.00022625212,-1.1252293e-05,0.002350606195776928
+114,categorical__major industry code_Wholesale trade,categorical,major industry code,Wholesale trade,0.00021092527,-0.00010216479,0.01802298481879282
+115,categorical__major industry code_Manufacturing-nondurable goods,categorical,major industry code,Manufacturing-nondurable goods,0.0001953134,6.963353e-05,0.35042576545059967
+116,categorical__country of birth mother_Ireland,categorical,country of birth mother,Ireland,0.00017915828,-4.3657856e-06,0.3260175518611889
+117,categorical__country of birth mother_Scotland,categorical,country of birth mother,Scotland,0.0001489663,-3.590219e-05,0.0012078807956977392
+118,categorical__country of birth mother_Canada,categorical,country of birth mother,Canada,0.00014269352,-5.3800017e-05,0.007272344541732031
+119,categorical__education_Associates degree-academic program,categorical,education,Associates degree-academic program,0.00013711312,-5.1957315e-05,0.023455942422678087
+120,categorical__country of birth father_Scotland,categorical,country of birth father,Scotland,0.00013619036,1.775885e-05,0.9987620474832476
+121,categorical__country of birth father_Italy,categorical,country of birth father,Italy,0.00013295168,-1.6909782e-05,0.01108644116217178
+122,categorical__full or part time employment stat_Unemployed full-time,categorical,full or part time employment stat,Unemployed full-time,0.00012419466,7.3129104e-06,0.011582624559574586
+123,categorical__major industry code_Forestry and fisheries,categorical,major industry code,Forestry and fisheries,0.00012273325,-2.8955197e-05,0.0011176656325335927
+124,categorical__marital stat_Separated,categorical,marital stat,Separated,0.00010827827,-2.1128732e-05,0.017341359141552604
+125,categorical__country of birth mother_Italy,categorical,country of birth mother,Italy,0.000101239675,3.3130639e-06,0.9711963031830917
+126,categorical__race_Amer Indian Aleut or Eskimo,categorical,race,Amer Indian Aleut or Eskimo,8.208799e-05,-2.7819426e-05,0.9555439723741123
+127,categorical__reason for unemployment_New entrant,categorical,reason for unemployment,New entrant,7.762245e-05,-6.4296694e-07,0.0022002475905033504
+128,categorical__marital stat_Married-spouse absent,categorical,marital stat,Married-spouse absent,7.202927e-05,-3.376544e-06,0.9215629275822838
+129,categorical__full or part time employment stat_PT for econ reasons usually FT,categorical,full or part time employment stat,PT for econ reasons usually FT,5.799537e-05,-9.145789e-06,0.002631275592287606
+130,categorical__country of birth father_Cuba,categorical,country of birth father,Cuba,5.6139605e-05,-1.3430315e-06,0.0056384476977591556
+131,categorical__country of birth self_Canada,categorical,country of birth self,Canada,5.1460476e-05,-9.876713e-06,0.0035685108984929055
+132,categorical__major industry code_Entertainment,categorical,major industry code,Entertainment,4.8956277e-05,2.287367e-05,0.9917252647564441
+133,categorical__reason for unemployment_Re-entrant,categorical,reason for unemployment,Re-entrant,4.361406e-05,-2.4936695e-05,0.010119134134911764
+134,categorical__country of birth father_Canada,categorical,country of birth father,Canada,4.1002724e-05,-2.1760072e-06,0.0069164958425845646
+135,categorical__enroll in edu inst last wk_College or university,categorical,enroll in edu inst last wk,College or university,3.7223166e-05,-9.60634e-06,0.9714920084401297
+136,categorical__country of birth father_England,categorical,country of birth father,England,3.0033041e-05,-2.1372185e-05,0.003974479132731565
+137,categorical__full or part time employment stat_PT for econ reasons usually PT,categorical,full or part time employment stat,PT for econ reasons usually PT,2.9764547e-05,-1.4549946e-05,0.006059451792525173
+138,categorical__major industry code_Armed Forces,categorical,major industry code,Armed Forces,2.4360294e-05,-6.8844574e-06,0.00018043032632829298
+139,categorical__country of birth self_Poland,categorical,country of birth self,Poland,2.3629878e-05,-9.2136925e-06,0.001909554286974434
+140,categorical__country of birth self_Germany,categorical,country of birth self,Germany,1.5311061e-05,3.916948e-06,0.9957348275637395
+141,categorical__country of birth self_China,categorical,country of birth self,China,1.49437665e-05,5.1426073e-06,0.997604286222641
+142,categorical__country of birth father_Germany,categorical,country of birth father,Germany,1.40652155e-05,5.4655707e-06,0.9932037910416343
+143,categorical__country of birth mother_Philippines,categorical,country of birth mother,Philippines,1.2559056e-05,-4.900289e-06,0.006169714769725796
+144,categorical__country of birth father_Columbia,categorical,country of birth father,Columbia,0.0,0.0,0.0
+145,categorical__class of worker_Never worked,categorical,class of worker,Never worked,0.0,0.0,0.0
+146,categorical__country of birth father_China,categorical,country of birth father,China,0.0,0.0,0.0
+147,categorical__country of birth father_Cambodia,categorical,country of birth father,Cambodia,0.0,0.0,0.0
+148,categorical__detailed household summary in household_Group Quarters- Secondary individual,categorical,detailed household summary in household,Group Quarters- Secondary individual,0.0,0.0,0.0
+149,categorical__major occupation code_Armed Forces,categorical,major occupation code,Armed Forces,0.0,0.0,0.0
+150,categorical__detailed household summary in household_Child under 18 ever married,categorical,detailed household summary in household,Child under 18 ever married,0.0,0.0,0.0
+151,categorical__reason for unemployment_Job leaver,categorical,reason for unemployment,Job leaver,0.0,0.0,0.0
+152,categorical__race_Other,categorical,race,Other,0.0,0.0,0.0
+153,categorical__major occupation code_Private household services,categorical,major occupation code,Private household services,0.0,0.0,0.0
+154,categorical__citizenship_Native- Born in the United States,categorical,citizenship,Native- Born in the United States,0.0,0.0,0.0
+155,categorical__citizenship_Native- Born in Puerto Rico or U S Outlying,categorical,citizenship,Native- Born in Puerto Rico or U S Outlying,0.0,0.0,0.0
+156,categorical__citizenship_Native- Born abroad of American Parent(s),categorical,citizenship,Native- Born abroad of American Parent(s),0.0,0.0,0.0
+157,categorical__fill inc questionnaire for veteran's admin_Yes,categorical,fill inc questionnaire for veteran's admin,Yes,0.0,0.0,0.0
+158,categorical__full or part time employment stat_Unemployed part- time,categorical,full or part time employment stat,Unemployed part- time,0.0,0.0,0.0
+159,categorical__reason for unemployment_Job loser - on layoff,categorical,reason for unemployment,Job loser - on layoff,0.0,0.0,0.0
+160,categorical__class of worker_Without pay,categorical,class of worker,Without pay,0.0,0.0,0.0
+161,categorical__country of birth father_Philippines,categorical,country of birth father,Philippines,0.0,0.0,0.0
+162,categorical__country of birth father_Peru,categorical,country of birth father,Peru,0.0,0.0,0.0
+163,categorical__country of birth father_Panama,categorical,country of birth father,Panama,0.0,0.0,0.0
+164,categorical__country of birth father_Outlying-U S (Guam USVI etc),categorical,country of birth father,Outlying-U S (Guam USVI etc),0.0,0.0,0.0
+165,categorical__country of birth father_Nicaragua,categorical,country of birth father,Nicaragua,0.0,0.0,0.0
+166,categorical__country of birth father_Taiwan,categorical,country of birth father,Taiwan,0.0,0.0,0.0
+167,categorical__country of birth father_South Korea,categorical,country of birth father,South Korea,0.0,0.0,0.0
+168,categorical__country of birth father_Poland,categorical,country of birth father,Poland,0.0,0.0,0.0
+169,categorical__country of birth father_Trinadad&Tobago,categorical,country of birth father,Trinadad&Tobago,0.0,0.0,0.0
+170,categorical__country of birth father_Thailand,categorical,country of birth father,Thailand,0.0,0.0,0.0
+171,categorical__country of birth father_Yugoslavia,categorical,country of birth father,Yugoslavia,0.0,0.0,0.0
+172,categorical__country of birth mother_Cambodia,categorical,country of birth mother,Cambodia,0.0,0.0,0.0
+173,categorical__country of birth mother_China,categorical,country of birth mother,China,0.0,0.0,0.0
+174,categorical__country of birth mother_Columbia,categorical,country of birth mother,Columbia,0.0,0.0,0.0
+175,categorical__country of birth father_Portugal,categorical,country of birth father,Portugal,0.0,0.0,0.0
+176,categorical__country of birth father_Puerto-Rico,categorical,country of birth father,Puerto-Rico,0.0,0.0,0.0
+177,categorical__country of birth mother_Dominican-Republic,categorical,country of birth mother,Dominican-Republic,0.0,0.0,0.0
+178,categorical__country of birth mother_Cuba,categorical,country of birth mother,Cuba,0.0,0.0,0.0
+179,categorical__country of birth father_France,categorical,country of birth father,France,0.0,0.0,0.0
+180,categorical__country of birth father_Guatemala,categorical,country of birth father,Guatemala,0.0,0.0,0.0
+181,categorical__country of birth father_Haiti,categorical,country of birth father,Haiti,0.0,0.0,0.0
+182,categorical__country of birth father_Honduras,categorical,country of birth father,Honduras,0.0,0.0,0.0
+183,categorical__country of birth father_India,categorical,country of birth father,India,0.0,0.0,0.0
+184,categorical__country of birth father_Hungary,categorical,country of birth father,Hungary,0.0,0.0,0.0
+185,categorical__country of birth father_Jamaica,categorical,country of birth father,Jamaica,0.0,0.0,0.0
+186,categorical__country of birth father_Japan,categorical,country of birth father,Japan,0.0,0.0,0.0
+187,categorical__country of birth father_Laos,categorical,country of birth father,Laos,0.0,0.0,0.0
+188,categorical__country of birth father_Holand-Netherlands,categorical,country of birth father,Holand-Netherlands,0.0,0.0,0.0
+189,categorical__country of birth father_Hong Kong,categorical,country of birth father,Hong Kong,0.0,0.0,0.0
+190,categorical__country of birth father_Greece,categorical,country of birth father,Greece,0.0,0.0,0.0
+191,categorical__country of birth father_Dominican-Republic,categorical,country of birth father,Dominican-Republic,0.0,0.0,0.0
+192,categorical__country of birth father_Ecuador,categorical,country of birth father,Ecuador,0.0,0.0,0.0
+193,categorical__country of birth mother_India,categorical,country of birth mother,India,0.0,0.0,0.0
+194,categorical__country of birth mother_Iran,categorical,country of birth mother,Iran,0.0,0.0,0.0
+195,categorical__country of birth mother_Hong Kong,categorical,country of birth mother,Hong Kong,0.0,0.0,0.0
+196,categorical__country of birth mother_Hungary,categorical,country of birth mother,Hungary,0.0,0.0,0.0
+197,categorical__country of birth mother_Honduras,categorical,country of birth mother,Honduras,0.0,0.0,0.0
+198,categorical__country of birth mother_Holand-Netherlands,categorical,country of birth mother,Holand-Netherlands,0.0,0.0,0.0
+199,categorical__country of birth mother_Guatemala,categorical,country of birth mother,Guatemala,0.0,0.0,0.0
+200,categorical__country of birth mother_Haiti,categorical,country of birth mother,Haiti,0.0,0.0,0.0
+201,categorical__country of birth mother_France,categorical,country of birth mother,France,0.0,0.0,0.0
+202,categorical__country of birth mother_England,categorical,country of birth mother,England,0.0,0.0,0.0
+203,categorical__country of birth mother_Greece,categorical,country of birth mother,Greece,0.0,0.0,0.0
+204,categorical__country of birth mother_Germany,categorical,country of birth mother,Germany,0.0,0.0,0.0
+205,categorical__country of birth mother_El-Salvador,categorical,country of birth mother,El-Salvador,0.0,0.0,0.0
+206,categorical__country of birth mother_Ecuador,categorical,country of birth mother,Ecuador,0.0,0.0,0.0
+207,categorical__country of birth mother_Peru,categorical,country of birth mother,Peru,0.0,0.0,0.0
+208,categorical__country of birth mother_Panama,categorical,country of birth mother,Panama,0.0,0.0,0.0
+209,categorical__country of birth mother_Thailand,categorical,country of birth mother,Thailand,0.0,0.0,0.0
+210,categorical__country of birth mother_Taiwan,categorical,country of birth mother,Taiwan,0.0,0.0,0.0
+211,categorical__country of birth mother_South Korea,categorical,country of birth mother,South Korea,0.0,0.0,0.0
+212,categorical__country of birth mother_Trinadad&Tobago,categorical,country of birth mother,Trinadad&Tobago,0.0,0.0,0.0
+213,categorical__country of birth self_Cambodia,categorical,country of birth self,Cambodia,0.0,0.0,0.0
+214,categorical__country of birth mother_Yugoslavia,categorical,country of birth mother,Yugoslavia,0.0,0.0,0.0
+215,categorical__country of birth self_Columbia,categorical,country of birth self,Columbia,0.0,0.0,0.0
+216,categorical__country of birth mother_Vietnam,categorical,country of birth mother,Vietnam,0.0,0.0,0.0
+217,categorical__country of birth self_Cuba,categorical,country of birth self,Cuba,0.0,0.0,0.0
+218,categorical__country of birth self_Dominican-Republic,categorical,country of birth self,Dominican-Republic,0.0,0.0,0.0
+219,categorical__country of birth mother_Outlying-U S (Guam USVI etc),categorical,country of birth mother,Outlying-U S (Guam USVI etc),0.0,0.0,0.0
+220,categorical__country of birth mother_Portugal,categorical,country of birth mother,Portugal,0.0,0.0,0.0
+221,categorical__country of birth mother_Puerto-Rico,categorical,country of birth mother,Puerto-Rico,0.0,0.0,0.0
+222,categorical__country of birth mother_Nicaragua,categorical,country of birth mother,Nicaragua,0.0,0.0,0.0
+223,categorical__country of birth mother_Jamaica,categorical,country of birth mother,Jamaica,0.0,0.0,0.0
+224,categorical__country of birth mother_Laos,categorical,country of birth mother,Laos,0.0,0.0,0.0
+225,categorical__country of birth self_Haiti,categorical,country of birth self,Haiti,0.0,0.0,0.0
+226,categorical__country of birth self_Guatemala,categorical,country of birth self,Guatemala,0.0,0.0,0.0
+227,categorical__country of birth self_Greece,categorical,country of birth self,Greece,0.0,0.0,0.0
+228,categorical__country of birth self_France,categorical,country of birth self,France,0.0,0.0,0.0
+229,categorical__country of birth self_Ecuador,categorical,country of birth self,Ecuador,0.0,0.0,0.0
+230,categorical__country of birth self_El-Salvador,categorical,country of birth self,El-Salvador,0.0,0.0,0.0
+231,categorical__country of birth self_Holand-Netherlands,categorical,country of birth self,Holand-Netherlands,0.0,0.0,0.0
+232,categorical__country of birth self_Honduras,categorical,country of birth self,Honduras,0.0,0.0,0.0
+233,categorical__country of birth self_Italy,categorical,country of birth self,Italy,0.0,0.0,0.0
+234,categorical__country of birth self_Ireland,categorical,country of birth self,Ireland,0.0,0.0,0.0
+235,categorical__country of birth self_Jamaica,categorical,country of birth self,Jamaica,0.0,0.0,0.0
+236,categorical__country of birth self_Japan,categorical,country of birth self,Japan,0.0,0.0,0.0
+237,categorical__country of birth self_India,categorical,country of birth self,India,0.0,0.0,0.0
+238,categorical__country of birth self_Iran,categorical,country of birth self,Iran,0.0,0.0,0.0
+239,categorical__country of birth self_Hong Kong,categorical,country of birth self,Hong Kong,0.0,0.0,0.0
+240,categorical__country of birth self_Hungary,categorical,country of birth self,Hungary,0.0,0.0,0.0
+241,categorical__marital stat_Married-A F spouse present,categorical,marital stat,Married-A F spouse present,0.0,0.0,0.0
+242,categorical__education_Less than 1st grade,categorical,education,Less than 1st grade,0.0,0.0,0.0
+243,categorical__country of birth self_Laos,categorical,country of birth self,Laos,0.0,0.0,0.0
+244,categorical__education_Children,categorical,education,Children,0.0,0.0,0.0
+245,categorical__country of birth self_Panama,categorical,country of birth self,Panama,0.0,0.0,0.0
+246,categorical__country of birth self_Peru,categorical,country of birth self,Peru,0.0,0.0,0.0
+247,categorical__country of birth self_Outlying-U S (Guam USVI etc),categorical,country of birth self,Outlying-U S (Guam USVI etc),0.0,0.0,0.0
+248,categorical__country of birth self_Nicaragua,categorical,country of birth self,Nicaragua,0.0,0.0,0.0
+249,categorical__country of birth self_Portugal,categorical,country of birth self,Portugal,0.0,0.0,0.0
+250,categorical__country of birth self_Philippines,categorical,country of birth self,Philippines,0.0,0.0,0.0
+251,categorical__country of birth self_South Korea,categorical,country of birth self,South Korea,0.0,0.0,0.0
+252,categorical__country of birth self_Puerto-Rico,categorical,country of birth self,Puerto-Rico,0.0,0.0,0.0
+253,categorical__country of birth self_Taiwan,categorical,country of birth self,Taiwan,0.0,0.0,0.0
+254,categorical__country of birth self_Thailand,categorical,country of birth self,Thailand,0.0,0.0,0.0
+255,categorical__country of birth self_Trinadad&Tobago,categorical,country of birth self,Trinadad&Tobago,0.0,0.0,0.0
+256,categorical__country of birth self_Yugoslavia,categorical,country of birth self,Yugoslavia,0.0,0.0,0.0
