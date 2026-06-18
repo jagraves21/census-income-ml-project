@@ -38,7 +38,7 @@ def plot_missing_values(
 			.multiply(w, axis=0)
 			.sum()
 			.sort_values(ascending=horizontal)
-			.to_frame()
+			.to_frame(name="Percentage (%)")
 		)
 		xlabel = "Weighted Proportion"
 	else:
@@ -47,12 +47,12 @@ def plot_missing_values(
 			.isnull()
 			.mean()
 			.sort_values(ascending=not horizontal)
-			.to_frame()
+			.to_frame(name="Percentage (%)")
 		)
 		xlabel = "Proportion"
 
 	if only_missing:
-		missing_df = missing_df[missing_df[0] > 0]
+		missing_df = missing_df[missing_df["Percentage (%)"] > 0]
 	
 	title = "Missing Values Proportion by Feature"
 	if weight_column is not None:
@@ -60,7 +60,7 @@ def plot_missing_values(
 
 	bar_plot(
 		df=missing_df,
-		data_column=0,
+		data_column="Percentage (%)",
 		colors=None,
 		title=title,
 		xlabel=xlabel,
@@ -69,7 +69,14 @@ def plot_missing_values(
 		ax=ax,
 	)
 
-	return missing_df
+	return (
+		missing_df
+		.sort_values("Percentage (%)", ascending=False)
+		.reset_index(names="Feature")
+		.assign(**{
+			"Percentage (%)": lambda df: df["Percentage (%)"] * 100
+		})
+	)
 
 
 @with_ax
@@ -84,7 +91,8 @@ def plot_not_in_universe(
 	if niu_values is None:
 		niu_values = list(_NIU_VALUES)
 
-	niu = {}
+	niu_proportions = dict()
+	niu_indicator_values = dict()
 
 	for column in df.columns:
 		if not (
@@ -105,11 +113,19 @@ def plot_not_in_universe(
 			)
 
 		if proportion > 0 or not niu_only:
-			niu[column] = proportion
+			niu_proportions[column] = proportion
+			niu_indicator_values[column] = ", ".join(
+				list(df.loc[mask, column].unique())
+			)
 
-	niu_df = pd.DataFrame(
-		[pd.Series(niu).sort_values(ascending=horizontal)]
-	).transpose()
+	niu_df = (
+		pd.DataFrame([
+			pd.Series(niu_indicator_values, name="NIU Indicator Value"),
+			pd.Series(niu_proportions, name="Percentage (%)"),
+		])
+		.transpose()
+		.sort_values("Percentage (%)", ascending=horizontal)
+	)
 
 	if niu_df.empty:
 		print("No 'Not in Universe' values found.")
@@ -121,7 +137,7 @@ def plot_not_in_universe(
 
 	bar_plot(
 		df=niu_df,
-		data_column=0,
+		data_column="Percentage (%)",
 		colors=None,
 		title=title,
 		xlabel="Weighted Proportion" if weight_column else "Proportion",
@@ -130,5 +146,14 @@ def plot_not_in_universe(
 		ax=ax,
 	)
 
-	return niu_df
+	niu_values = set(_NIU_VALUES)
+
+	return (
+		niu_df
+		.sort_values("Percentage (%)", ascending=False)
+		.reset_index(names="Feature")
+		.assign(**{
+			"Percentage (%)": lambda df: df["Percentage (%)"] * 100
+		})
+	)
 
