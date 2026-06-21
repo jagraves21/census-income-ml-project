@@ -6,14 +6,15 @@ It includes all source code, experiments, analysis notebooks, trained models, an
 
 ## Repository Structure
 
-### [data/](./data)
-Datasets, intermediate artifacts, model outputs, and analysis results.
+### [data/](./data/)
+All datasets and associated artifacts are organized here. Each dataset has its own subdirectory containing raw data, processed data, models, results, and figures.
 
-- [raw/](./data/raw) &mdash; original provided dataset
-- [processed/](./data/processed) &mdash; cleaned and transformed datasets
-- [figures/](./data/figures) &mdash; figures generated during analysis
-- [models/](./data/models) &mdash; serialized trained models (`.joblib`)
-- [results/](./data/results) &mdash; csv outputs from evaluation and analysis
+- [Census/](./data/Census) — current dataset used in this project
+  - [raw/](./data/Census/raw) &mdash; original provided dataset
+  - [processed/](./data/Census/processed) &mdash; cleaned and transformed datasets
+  - [figures/](./data/Census/figures) &mdash; figures generated during analysis
+  - [models/](./data/Census/models) &mdash; serialized trained models (`.joblib`)
+  - [results/](./data/Census/results) &mdash; csv outputs from evaluation and analysis
 
 ### [notebooks/](./notebooks)
 End-to-end workflow covering exploration, preprocessing, modeling, and reporting.
@@ -60,4 +61,3 @@ The notebooks are largely independent, but [02-data-cleaning-and-preprocessing.i
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
-
