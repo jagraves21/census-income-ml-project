@@ -1,0 +1,57 @@
+% !TEX root = main.tex
+
+\section{Segmentation Analysis}
+
+\subsection{Overview}
+
+The segmentation approach is designed to identify clusters without requiring a fixed number of groups, allow cluster sizes to vary naturally, capture non-linear and irregular cluster structures, and treat ambiguous observations as noise rather than forcing assignment.
+
+The segmentation component of this project is an exploratory, unsupervised analysis designed to identify meaningful subgroups within the population. Unlike the classification task, there are no predefined labels, and the objective is to uncover structure directly from the data based on similarity across demographic, economic, and socioeconomic characteristics. The goal is to produce interpretable segments that reflect real differences in population structure and can support downstream applications such as customer profiling, targeted marketing, and resource prioritization. The segmentation approach is designed to
+\begin{enumerate*}[label=(\roman*)]
+	\item identify clusters without requiring a fixed number of groups,
+	\item allow cluster sizes to vary naturally,
+	\item capture non-linear and irregular cluster structures, and
+	\item treat ambiguous observations as noise rather than forcing assignment.
+\end{enumerate*}
+
+\subsection{Feature Selection}
+
+A reduced feature set was selected to improve interpretability, reduce noise in the clustering process, and promote clustering based on meaningful structural differences rather than redundancy or noise in the full feature space. The selected variables capture three complementary dimensions of the population.
+\begin{itemize}
+	\item \textbf{Demographic Features:} \texttt{age}, \texttt{sex}, \texttt{race}, \texttt{marital stat}, \texttt{country of birth self}, \texttt{family members under 18}
+	\item \textbf{Economic Features:} \texttt{wage per hour}, \texttt{capital gains}, \texttt{capital losses}, \texttt{dividends from stocks}
+	\item \textbf{Socioeconomic Features:} \texttt{education}, \texttt{class of worker}, \texttt{major occupation code}, \texttt{major industry code}
+\end{itemize}
+
+\subsection{Dimensionality Reduction with UMAP}
+
+The selected feature space is high-dimensional and sparse due to one-hot encoding of categorical variables. To address this, Uniform Manifold Approximation and Projection (UMAP) is used to embed the data into a lower-dimensional space suitable for clustering. UMAP preserves local neighborhood structure, ensuring that individuals who are similar in the original feature space remain close in the embedded space. This is particularly important in sparse settings where traditional distance metrics become less informative. Cosine distance is used as the similarity metric, as it better captures relationships in sparse, high-dimensional one-hot encoded data by focusing on shared active features rather than absolute magnitude.
+
+\subsection{Clustering with HDBSCAN}
+
+Hierarchical Density-Based Spatial Clustering of Applications with Noise (HDBSCAN) is applied to the UMAP embedding to identify dense regions corresponding to population segments. HDBSCAN is well suited for this task because it
+\begin{enumerate*}[label=(\roman*)]
+	\item does not require specifying the number of clusters in advance,
+	\item allows clusters to vary in size and shape, and 
+	\item identifies noise points that do not belong to any cluster.
+\end{enumerate*}
+This flexibility is important for socioeconomic data, where population structure is unlikely to follow simple geometric assumptions.
+
+\subsection{Cluster Analysis}
+
+The clustering procedure identified 28 clusters, which were interpreted post hoc by examining distributions of the original features within each group. Because HDBSCAN does not impose a predefined cluster structure, interpretation relies on differences in demographic composition, employment status, occupation, and financial variables across clusters.
+
+One group of clusters includes noise and highly homogeneous edge cases. Cluster $-1$ is labeled as noise and contains a large proportion of children and other observations that do not fit well into any dense region of the feature space. Cluster 0 is a degenerate case consisting entirely of 10-year-old male individuals with no labor force participation, reflecting an artifact of extreme feature homogeneity rather than a meaningful socioeconomic segment.
+
+A second group consists of youth and early workforce segments. Clusters 1 and 2 are primarily composed of teenagers in secondary education with early employment experience, often in retail occupations. These clusters differ mainly in gender composition and minor outliers, with Cluster 1 being almost entirely female and Cluster 2 predominantly male.
+
+Several clusters reflect clear occupational and industrial specialization. These include agricultural workers concentrated in farming, forestry, and fishing; government employees separated into federal, state, and local levels; private-sector sales and retail workers; and self-employed contractors concentrated in construction and repair-related services. These clusters are primarily distinguished by occupation and industry codes rather than demographic variables.
+
+Another set of clusters is defined by socioeconomic status and financial characteristics. This includes an investment-oriented group characterized by elevated capital gains and managerial occupations, a professional and technical segment with higher education levels and specialized occupations, and an executive and managerial cluster that is nearly homogeneous in occupational composition.
+
+Finally, a number of clusters are driven primarily by labor market status. These include retired individuals with older age distributions and limited labor participation, as well as unemployed or inactive groups with varying demographic compositions. Additional clusters capture manual and production labor, including manufacturing workers, machine operators, and transportation-related occupations.
+
+Overall, the segmentation reveals a structured population organized primarily along occupation, employment status, education, and financial behavior, with additional stratification by life stage and labor market participation.
+
+The segmentation results reveal a structured population with clear differences in occupation, employment status, education, and financial behavior. The combination of UMAP and HDBSCAN successfully captures both high-level socioeconomic stratification and more granular occupational subgroups, while also identifying noise and edge cases that do not conform to dominant patterns.
+

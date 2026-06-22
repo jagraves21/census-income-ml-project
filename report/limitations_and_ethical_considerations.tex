@@ -1,0 +1,30 @@
+% !TEX root = main.tex
+
+\section{Limitations and Ethical Considerations}
+
+This section outlines key limitations of the data, modeling approaches, and segmentation pipeline, as well as important ethical considerations associated with predictive modeling in socioeconomic contexts.
+
+\subsection{Temporal Limitations and Concept Drift}
+
+The dataset originates from 1994--1995, which limits the extent to which findings generalize to present-day populations. Relationships between demographic characteristics, employment conditions, and income are likely to have shifted over time due to structural economic changes, labor market evolution, and policy differences. In addition, several feature definitions and coding schemes have changed since the original data collection period, making direct application to modern datasets non-trivial.
+
+\subsection{Sampling Bias and Representativeness}
+
+Although survey weights are applied, the dataset may still not fully represent the underlying population. Certain subgroups are underrepresented or aggregated into broad categories, which reduces granularity and may introduce bias. As a result, the findings should be interpreted as broad population-level patterns rather than precise estimates for specific subpopulations.
+
+\subsection{Feature Limitations}
+
+The dataset is restricted to demographic, employment, and basic socioeconomic variables. It does not include behavioral or transactional information such as purchasing history, financial transactions, or digital activity. This limitation reduces the ability to capture fine-grained differences in lifestyle and consumption behavior, which are often important in applied marketing and recommendation systems. Consequently, both predictive performance and segmentation granularity are constrained by the available feature set.
+
+\subsection{Fairness and Ethical Considerations}
+
+Income prediction and segmentation models may reinforce existing societal biases present in historical census data. Even when sensitive attributes are excluded, many remaining variables (such as education, occupation, and geography) can act as proxies for protected characteristics, potentially leading to indirect discrimination. In the context of clustering, this risk is particularly relevant because unsupervised methods can reproduce socially meaningful groupings without explicit supervision. As a result, clusters may reflect structural inequalities rather than neutral population structure. This highlights the importance of careful interpretation when using these methods for decision-making or targeting applications.
+
+\subsection{Limitations of the Segmentation Pipeline}
+
+The segmentation approach combines UMAP for dimensionality reduction with HDBSCAN for clustering. While this pipeline is effective for discovering structure, it has several limitations. In particular, HDBSCAN does not naturally support out-of-sample cluster assignment, meaning that new observations cannot be consistently mapped to existing clusters without additional modeling steps. Furthermore, the structure of the embedding space and resulting clusters may be sensitive to hyperparameter choices in both UMAP and HDBSCAN. This introduces potential instability in cluster assignments, especially when applied to slightly different datasets or updated data distributions.
+
+\subsection{Summary}
+
+Overall, while the models and segmentation approach provide meaningful insights into income structure and population heterogeneity, their practical application is limited by temporal relevance, feature availability, and methodological constraints. These limitations highlight the importance of cautious interpretation, particularly in applied or decision-making contexts.
+

@@ -1,0 +1,84 @@
+\documentclass[10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[letterpaper,margin=1in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{siunitx}
+
+\usepackage[inline]{enumitem}
+\usepackage{titlesec}
+\usepackage{titling}
+
+\usepackage[parfill]{parskip}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	citecolor=blue,
+	urlcolor=blue
+}
+
+\usepackage[capitalize,noabbrev]{cleveref}
+
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+	{\normalfont\bfseries\Large}
+	{\thesection}
+	{1em}
+	{}
+
+\titleformat{\subsection}
+	{\normalfont\bfseries\large}
+	{\thesubsection}
+	{1em}
+	{}
+
+\titleformat{\subsubsection}
+	{\normalfont\bfseries}
+	{\thesubsubsection}
+	{1em}
+	{}
+
+\pretitle{\begin{center}\Huge\scshape}
+\posttitle{\par\end{center}}
+
+\preauthor{\begin{center}\large}
+\postauthor{\par\end{center}}
+
+\predate{\begin{center}\large}
+\postdate{\par\end{center}}
+
+\title{Income Classification and \\ Customer Segmentation Report}
+\date{}
+
+\begin{document}
+
+\begin{singlespace}
+\maketitle
+\tableofcontents
+\end{singlespace}
+
+\newpage
+
+\input{introduction.tex}
+\input{dataset_description_and_structure.tex}
+\input{data_exploration_and_preprocessing.tex}
+\input{income_classification_model.tex}
+\input{segmentation_analysis.tex}
+\input{limitations_and_ethical_considerations.tex}
+\input{conclusion.tex}
+
+\end{document}

@@ -1,0 +1,11 @@
+% !TEX root = main.tex
+
+\section{Conclusion}
+
+This project investigated income prediction and population segmentation using U.S. Census Current Population Survey data. The analysis combined a supervised learning task for predicting high-income individuals with an unsupervised clustering approach for identifying meaningful subgroups within the population.
+
+For the classification task, all models achieved strong predictive performance, with XGBoost performing best overall in terms of ROC-AUC and F1 score. Logistic regression models provided competitive performance while offering greater interpretability. Across models, key predictors of income consistently included education level, occupational category, work intensity, and financial variables such as capital gains and dividends. Lower education levels, reduced labor force participation, and lack of investment income were strongly associated with lower income outcomes.
+
+The segmentation analysis revealed a structured population composed of interpretable clusters reflecting occupation, employment status, socioeconomic status, and life stage. The combination of UMAP for dimensionality reduction and HDBSCAN for clustering successfully identified both broad structural groups and finer occupational subsegments, while also separating noise and edge cases that did not conform to dominant patterns.
+
+Overall, the results demonstrate that income structure in the dataset is highly organized and can be effectively modeled using both supervised and unsupervised techniques. However, the analysis is constrained by temporal limitations, feature availability, and methodological considerations that limit direct real-world deployment. Despite these constraints, the study provides a clear demonstration of how machine learning methods can be used to extract both predictive signals and interpretable population structure from census data.

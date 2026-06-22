@@ -1,0 +1,20 @@
+% !TEX root = main.tex
+
+\section{Data Exploration and Preprocessing}
+
+Prior to model development, the dataset was analyzed to understand its structure, identify data quality issues, and define appropriate preprocessing steps. Given the survey-based nature of the data, particular attention was paid to class imbalance, categorical encoding, missing patterns, and feature relationships.
+
+\subsection{Key Data Insights}
+
+An initial exploratory analysis was conducted to understand the distributional properties of the dataset and relationships between variables. The target variable is highly imbalanced, with the majority class representing approximately 94\% of the data. This imbalance is consistent under both weighted and unweighted views, indicating that it reflects the underlying population structure rather than a sampling artifact. Correlation analysis of numerical variables shows generally weak linear relationships, both among features and with respect to the target. This suggests that income classification is not driven by simple linear effects among numeric attributes. In contrast, categorical variables exhibit stronger structural dependencies. In particular, occupation, industry, education, and household-related features show clear internal relationships and hierarchical structure. Migration-related variables also show evidence of temporal variation between 1994 and 1995, suggesting potential distribution shift in parts of the dataset. Overall, these findings indicate that predictive signal is primarily contained in categorical structure rather than linear relationships in numeric features.
+
+\subsection{Data Quality Issues}
+
+Several data quality considerations were identified during exploration. Duplicate analysis shows that duplicates are rare and likely reflect survey or processing artifacts. A small number of cases also show identical features with conflicting labels, indicating either noise or limitations in feature resolution.
+
+Missing data is limited but non-uniform. True missing values appear only in the \texttt{hispanic origin} feature, while several other variables contain \texttt{?} values representing unknown or unrecorded responses. These were treated as missing during preprocessing. The dataset also contains a large number of ``Not in Universe'' (NIU) values, which indicate structural non-applicability due to survey design rather than missing responses. These values were retained as valid categories, as they carry meaningful information about respondent eligibility.
+
+\subsection{Preprocessing Pipeline}
+
+Preprocessing was applied consistently across both classification and segmentation tasks, with task-specific feature subsets selected where appropriate. Categorical variables were encoded using one-hot encoding. Missing and unknown values were excluded from encoding to avoid introducing artificial structure. NIU categories were also excluded from one-hot encoding, as their absence is implicitly captured in the remaining feature representation. Numerical variables were standardized using z-score normalization to ensure comparable scaling across features. Although no missing numerical values were present, the pipeline was designed to support median imputation where necessary.
+

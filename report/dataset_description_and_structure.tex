@@ -1,0 +1,42 @@
+% !TEX root = main.tex
+
+\section{Dataset Description and Structure}
+
+The dataset used in this project is derived from the 1994--1995 Current Population Survey conducted by the U.S. Census Bureau. It contains 199,523 observations and 40 features describing demographic, employment, socioeconomic, and household characteristics. The dataset also includes a binary income label and a sample weight variable used to account for survey design.
+
+\subsection{Target Definition and Sample Weighting}
+
+The \texttt{label} variable defines a binary income classification task. Individuals are assigned to one of two categories based on annual income:
+
+\begin{itemize}
+    \item \texttt{"- 50000."} indicates income less than or equal to \$50,000
+    \item \texttt{"50000+."} indicates income greater than \$50,000
+\end{itemize}
+
+The labels are stored as strings and include formatting artifacts such as a trailing period.
+
+The dataset includes a \texttt{weight} variable that reflects the survey design and adjusts for unequal sampling probabilities. These weights ensure that evaluation reflects the underlying population distribution rather than the raw sample. In this project, different weighting strategies are explored to address class imbalance, and survey weights are applied during evaluation to produce population-representative performance metrics.
+
+\subsection{Feature Overview}
+
+The feature set spans several domains and includes both numerical and categorical features:
+
+\begin{itemize}
+	\item \textbf{Demographics Attributes:} \texttt{age}, \texttt{race}, \texttt{sex}, \texttt{hispanic origin}, \texttt{citizenship}, \texttt{country of birth self}, \texttt{country of birth father}, \texttt{country of birth mother}
+	\item \textbf{Education and Schooling:} \texttt{education}, \texttt{enroll in edu inst last wk}
+	\item \textbf{Employment Type and Job Structure:} \texttt{class of worker}, \texttt{full or part time employment stat}, \texttt{member of a labor union}, \texttt{reason for unemployment}, \texttt{own business or self employed}, \texttt{num persons worked for employer}, \texttt{detailed occupation recode}, \texttt{major occupation code}, \texttt{detailed industry recode}, \texttt{major industry code}
+	\item \textbf{Income and Financial Indicators:} \texttt{wage per hour}, \texttt{capital gains}, \texttt{capital losses}, \texttt{dividends from stocks}
+	\item \textbf{Work History:} \texttt{weeks worked in year}
+	\item \textbf{Veteran and Military Status:} \texttt{fill inc questionnaire for veteran's admin}, \texttt{veterans benefits}
+	\item \textbf{Household and Family Structure:} \texttt{marital stat}, \texttt{detailed household and family stat}, \texttt{detailed household summary in household}, \texttt{family members under 18}, \texttt{tax filer stat}
+	\item \textbf{Geography and Migration History:} \texttt{region of previous residence}, \texttt{state of previous residence}, \texttt{migration code-change in msa}, \texttt{migration code-change in reg}, \texttt{migration code-move within reg}, \texttt{lived in this house 1 year ago}, \texttt{migration previous residence in sunbelt}
+	\item \textbf{Temporal Identifiers:} \texttt{year}
+	\item \textbf{Additional Features:} \texttt{weight}, \texttt{label}
+\end{itemize}
+
+Many categorical features are encoded as integer codes representing discrete categories, particularly in occupation and industry-related fields. As a result, careful preprocessing is required before modeling.
+
+\subsection{Dataset Characteristics}
+
+The dataset presents several challenges typical of large-scale survey data. It contains a mix of categorical and numerical features requiring heterogeneous preprocessing strategies. The target variable is highly imbalanced, with a small proportion of high-income individuals. In addition, the data is survey-weighted, requiring careful handling to ensure representative evaluation. The feature space is moderately high-dimensional and contains redundancy across related variables, particularly within occupation, industry, and geographic features. These characteristics motivate both feature selection and dimensionality reduction in later stages of the analysis.
+
