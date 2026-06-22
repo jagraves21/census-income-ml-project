@@ -38,6 +38,11 @@ Final written report and source files.
 - [main.pdf](./report/main.pdf) &mdash; final report
 - `*.tex` &mdash; LaTeX source files used to generate the report
 
+### [docs/](./docs)
+Full experimental writeup.
+
+- [unabridged_report.md](./docs/unabridged_report.md) &mdash; complete experimental writeup with additional figures, results, and supporting analysis
+
 ### [requirements.txt](./requirements.txt)
 Python dependencies required to run the project.
 
