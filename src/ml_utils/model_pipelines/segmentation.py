@@ -15,10 +15,16 @@ from ..utils import(
 
 _CLUSTERING_SPECS = {
 	"kmeans": {
-		"name": "KMeans"
+		"name": "KMeans",
+		"params": {
+			"random_state": 42
+		}
 	},
 	"dbscan": {
-		"name": "DBSCAN"
+		"name": "DBSCAN",
+		"params": {
+			"random_state": 42
+		}
 	},
 	"hdbscan": {
 		"name": "HDBSCAN",
