@@ -10,3 +10,4 @@ hdbscan
 joblib
 tqdm
 tabulate
+jupyter
