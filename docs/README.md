@@ -69,13 +69,13 @@ To better understand the dataset prior to preprocessing, an initial exploration 
 
 The target variable is highly imbalanced, with approximately 93.79% of observations in the negative class (`- 50000.`) and 6.21% in the positive class (`50000+.`). This imbalance remains consistent across weighted and unweighted distributions, suggesting it reflects the underlying population rather than a sampling effect.
 
-See [A.1.3. Target Distribution and Class Imbalance](#A.1.3.-Target-Distribution-and-Class-Imbalance) for additional details.
+See [A.1.3. Target Distribution and Class Imbalance](#a13-target-distribution-and-class-imbalance) for additional details.
 
 #### 3.1.2. Numeric Feature Relationships and Structure
 
 In addition to class imbalance, there is limited linear correlation both between numeric features and the target, and among numeric features themselves, indicating no single numeric variable strongly explains income status. The figure below presents a correlation heatmap of the numeric variables in the dataset:
 
-![Pearson Correlation Heatmap](../../data/Census/figures/pearson_correlation_heatmap.png)
+![Pearson Correlation Heatmap](../data/Census/figures/pearson_correlation_heatmap.png)
 
 #### 3.1.3. Categorical Feature Relationships and Structure
 
@@ -91,9 +91,9 @@ In contrast, several categorical feature groups show clear structural relationsh
 
 The following figure presents the Cramér's V association heatmap for the categorical variables:
 
-![Cramér's V Association Heatmap](../../data/Census/figures/cramer_v_association_heatmap.png)
+![Cramér's V Association Heatmap](../data/Census/figures/cramer_v_association_heatmap.png)
 
-It is worth noting that `year` is highly correlated with several other categorical features, which is somewhat unexpected. Further investigation revealed that there is a distribution shift in some of the categorical variables from 1994 to 1995, primarily in the features capturing geography and migration. See [A.1.4. Temporal Distribution Shift](#A.1.4.-Temporal-Distribution-Shift) for additional details.
+It is worth noting that `year` is highly correlated with several other categorical features, which is somewhat unexpected. Further investigation revealed that there is a distribution shift in some of the categorical variables from 1994 to 1995, primarily in the features capturing geography and migration. See [A.1.4. Temporal Distribution Shift](#a14-temporal-distribution-shift) for additional details.
 
 The target variable shows its strongest associations with education and employment-related features, aligning with established socioeconomic patterns in income prediction.
 
@@ -123,13 +123,13 @@ The dataset contains relatively few missing values. The `hispanic origin` featur
 
 Additionally, several features (primarily those related to immigration history, country of birth, and residence) contain categorical entries of `?`. This appears to represent unknown or unrecorded responses rather than a meaningful category. These values were treated as missing data and explicitly converted to a standard missing value representation during preprocessing to ensure consistent handling across the dataset.
 
-See [A.1.1. Missing Values](#A.1.1.-Missing-Values) for additional details.
+See [A.1.1. Missing Values](#a11-missing-values) for additional details.
 
 #### 3.2.3. Not in Universe Responses
 
 The dataset contains a substantial number of "Not in Universe" (NIU) responses. These values indicate cases where a question was not applicable to a respondent, often due to survey skip logic rather than true missing data. NIU values are encoded using several different labels and appear across multiple features. Overall, these values are best interpreted as structural non-applicability indicators rather than missing data. For this reason, NIU values were retained as valid categorical states.
 
-See [A.1.2. Not in Universe Values](#A.1.2.-Not-in-Universe-Values) for additional details.
+See [A.1.2. Not in Universe Values](#a12-not-in-universe-values) for additional details.
 
 ### 3.4. Feature Processing
 
@@ -175,15 +175,15 @@ Several features were excluded prior to modeling due to data quality concerns, r
 
 To validate feature removal, feature importance analysis was performed. A LASSO logistic regression model was fitted on the full feature set, and coefficient magnitudes were examined. The following figure shows the feature coefficients under the LASSO logistic regression model:
 
-![LASSO Feature Importance](../../data/Census/figures/feature_importance-lasso_logisitic_regression.png)
+![LASSO Feature Importance](../data/Census/figures/feature_importance-lasso_logisitic_regression.png)
 
 The `detailed occupation recode` and `detailed industry recode` features ranked among the most important features in the full model, which initially suggested that their removal could be problematic. However, these features are subcategories of `major occupation code` and `major industry code`, respectively. After removing the detailed-level features, the LASSO model redistributed importance toward the corresponding higher-level features. This indicates that predictive information was largely preserved, suggesting that the detailed features can be safely excluded without significant loss of signal. The following figure illustrates the feature importance after removing `detailed occupation recode` and `detailed industry recode`:
 
-![LASSO Feature Importance After Removal](../../data/Census/figures/feature_importance-lasso_logisitic_regression2.png)
+![LASSO Feature Importance After Removal](../data/Census/figures/feature_importance-lasso_logisitic_regression2.png)
 
 In addition, SHAP values from an XGBoost model were used to capture nonlinear effects and feature interactions. The following figure shows feature importance according to this model:
 
-![SHAP Feature Importance](../../data/Census/figures/feature_importance-xgboost.png)
+![SHAP Feature Importance](../data/Census/figures/feature_importance-xgboost.png)
 
 These results indicate that none of the excluded features contribute strongly under the XGBoost model.
 
@@ -231,7 +231,7 @@ Together, these metrics provide a more comprehensive assessment of model perform
 
 ### 4.5. Classification Performance Results
 
-The following plots summarize the 5-fold cross-validated performance (mean $\pm$ standard deviation) of each classification model under the three weighting strategies. Performance estimation was conducted using the original sample weights to ensure that reported metrics reflect the underlying population distribution. For further details, see [A.2. Detailed Classification Performance Results](#A.2.-Detailed-Classification-Performance-Results).
+The following plots summarize the 5-fold cross-validated performance (mean $\pm$ standard deviation) of each classification model under the three weighting strategies. Performance estimation was conducted using the original sample weights to ensure that reported metrics reflect the underlying population distribution. For further details, see [A.2. Detailed Classification Performance Results](#a2-detailed-classification-performance-results).
 
 Across all strategies, XGBoost consistently achieved the strongest overall performance, particularly in terms of ROC-AUC, F1 score, precision, and accuracy. Logistic regression models showed similar ROC-AUC performance, while the decision tree model generally underperformed.
 
@@ -239,7 +239,7 @@ Across all strategies, XGBoost consistently achieved the strongest overall perfo
 
 Under the original weighting scheme, models were trained using the unmodified sample weights. The figure below summarizes the resulting 5-fold cross-validated performance across all models and metrics.
 
-![Original Sample Weights](../../data/Census/figures/original_sample_weights.png)
+![Original Sample Weights](../data/Census/figures/original_sample_weights.png)
 
 Logistic regression models achieve strong ROC-AUC and high specificity, indicating good class separation and reliable identification of the majority class. However, recall for the minority class is comparatively lower, limiting overall balanced performance.
 
@@ -251,7 +251,7 @@ XGBoost provides the best overall trade-off, achieving the highest ROC-AUC, F1 s
 
 Under class-balanced weighting, class contributions were equalized while preserving relative variation within each class. The figure below summarizes the resulting 5-fold cross-validated performance across all evaluated models and metrics.
 
-![Class-Balanced Weights](../../data/Census/figures/class_balanced_weights.png)
+![Class-Balanced Weights](../data/Census/figures/class_balanced_weights.png)
 
 Compared to the original weighting scheme, class-balanced weighting increases recall across all models, most notably for logistic regression and XGBoost. This improvement is accompanied by reductions in precision and F1 score, while ROC-AUC remains largely unchanged, indicating stable ranking performance.
 
@@ -259,7 +259,7 @@ Compared to the original weighting scheme, class-balanced weighting increases re
 
 Under fully uniform weighting, each class was assigned equal total weight, with uniform weights within classes. The figure below summarizes the resulting 5-fold cross-validated performance across all evaluated models and metrics.
 
-![Fully Uniform Class Weights](../../data/Census/figures/fully_uniform_class_weights.png)
+![Fully Uniform Class Weights](../data/Census/figures/fully_uniform_class_weights.png)
 
 Results under fully uniform weighting closely mirror those observed under the original weighting scheme. Logistic regression and XGBoost again exhibit higher recall at the expense of reduced precision and accuracy, while ROC-AUC remains stable across all models. The decision tree shows comparatively lower ROC-AUC but higher specificity and accuracy relative to the linear models.
 
@@ -271,7 +271,7 @@ In contrast, F1 score is more sensitive to the weighting strategy. For most mode
 
 Precision and recall show a complementary pattern. The original sample weights generally lead to higher precision across models, while alternative weighting strategies tend to reduce precision but increase recall. The decision tree model again deviates slightly from this pattern, with recall remaining largely stable across weighting strategies.
 
-Detailed plots can be found in [A.2.2. Performance Grouped by Evaluation Metric](#A.2.2.-Performance-Grouped-by-Evaluation-Metric).
+Detailed plots can be found in [A.2.2. Performance Grouped by Evaluation Metric](#a22-performance-grouped-by-evaluation-metric).
 
 #### 4.5.5. Summary of Performance Results
 
@@ -498,7 +498,7 @@ After applying HDBSCAN to the UMAP embedding, 28 clusters were identified. To ch
 
 This section contains cluster-level summaries and visualizations of the categorical features used in the segmentation model. It focuses on understanding how discrete attributes are distributed across clusters and how these distributions differ between segments.
 
-See [A.3 Supporting Figures for Segmentation](#A.3-Supporting-Figures-for-Segmentation) for cluster-level visualizations of the features used to interpret the segmentation results.
+See [A.3 Supporting Figures for Segmentation](#a3-supporting-figures-for-segmentation) for cluster-level visualizations of the features used to interpret the segmentation results.
 
 ## 6. Limitations and Ethical Considerations
 
@@ -539,7 +539,7 @@ There are several clear directions for extending and strengthening the current w
 
 Another important extension involves fairness assessment. Since income prediction and marketing segmentation can be sensitive to demographic disparities, future work should include formal fairness metrics and, where appropriate, fairness-aware modeling techniques to evaluate and reduce potential bias across different groups.
 
-Although exploratory analysis of feature distributions suggested overall consistency, a few of the features showed noticeable distributional shifts from 1994 to 1995. These differences may reflect temporal shifts, data quality issues, or inconsistencies in collection procedures. A more rigorous investigation into these patterns, including improved cleaning and validation steps, would help clarify their impact. See [A.1.4. Temporal Distribution Shift](#A.1.4.-Temporal-Distribution-Shift) for further details.
+Although exploratory analysis of feature distributions suggested overall consistency, a few of the features showed noticeable distributional shifts from 1994 to 1995. These differences may reflect temporal shifts, data quality issues, or inconsistencies in collection procedures. A more rigorous investigation into these patterns, including improved cleaning and validation steps, would help clarify their impact. See [A.1.4. Temporal Distribution Shift](#a14-temporal-distribution-shift) for further details.
 
 A further limitation is the restricted domain understanding of census variables, which made interpretation of some features less precise. Incorporating domain expertise or consulting detailed documentation more thoroughly would likely enhance both feature engineering and interpretability of the results.
 
@@ -579,7 +579,7 @@ The dataset contains actual missing values only in the `hispanic origin` feature
 
 The figure below shows the same missing data pattern across features.
 
-![Distribution of Missing Values](../../data/Census/figures/missing_values.png)
+![Distribution of Missing Values](../data/Census/figures/missing_values.png)
 
 #### A.1.2. Not in Universe Values
 
@@ -606,7 +606,7 @@ The dataset contains NIU (Not in Universe) responses, indicating that a question
 
 The figure below shows the same NIU data pattern across features.
 
-![Distribution of NIU Values](../../data/Census/figures/niu.png)
+![Distribution of NIU Values](../data/Census/figures/niu.png)
 
 #### A.1.3. Target Distribution and Class Imbalance
 
@@ -708,29 +708,29 @@ The following tables present the full 5-fold cross-validated performance results
 
 The following plots illustrate the performance of each model under the various weighting strategies. Across all weighting schemes, XGBoost consistently achieves the strongest overall performance, particularly in terms of ROC-AUC and F1 score. Logistic regression models show very similar behavior to each other across all metrics, with no consistent performance advantage between the LASSO and Ridge variants. The decision tree model exhibits lower ROC-AUC but demonstrates comparatively stronger performance in recall and specificity relative to the linear models, reflecting a different balance between sensitivity and precision.
 
-![Original Sample Weights](../../data/Census/figures/original_sample_weights.png)
+![Original Sample Weights](../data/Census/figures/original_sample_weights.png)
 
-![Fully Uniform Class Weights](../../data/Census/figures/fully_uniform_class_weights.png)
+![Fully Uniform Class Weights](../data/Census/figures/fully_uniform_class_weights.png)
 
-![Class-Balanced Weights](../../data/Census/figures/class_balanced_weights.png)
+![Class-Balanced Weights](../data/Census/figures/class_balanced_weights.png)
 
 #### A.2.2. Performance Grouped by Evaluation Metric
 
 The following plots illustrate the effect of the weighting scheme on each performance metric across all models. For each metric, performance is grouped by model, with separate bars representing the three weighting schemes (class-balanced weights, fully uniform class weights, and original sample weights). For both logistic regression models and the XGBoost model, ROC-AUC remained unchanged across weighting schemes. Relative to the baseline scheme, the alternative weighting schemes reduced precision, specificity, and accuracy while increasing recall and negative predictive value. Despite these gains in recall, the overall trade-off resulted in lower F1 scores. In contrast, the weighting scheme had minimal impact on the performance of the decision tree model.
 
-![ROC-AUC](../../data/Census/figures/roc_auc.png)
+![ROC-AUC](../data/Census/figures/roc_auc.png)
 
-![F1](../../data/Census/figures/f1.png)
+![F1](../data/Census/figures/f1.png)
 
-![Precision](../../data/Census/figures/precision.png)
+![Precision](../data/Census/figures/precision.png)
 
-![Recall](../../data/Census/figures/recall.png)
+![Recall](../data/Census/figures/recall.png)
 
-![Specificity](../../data/Census/figures/specificity.png)
+![Specificity](../data/Census/figures/specificity.png)
 
-![Negative_Predictive_Value](../../data/Census/figures/negative_predictive_value.png)
+![Negative_Predictive_Value](../data/Census/figures/negative_predictive_value.png)
 
-![Accuracy](../../data/Census/figures/accuracy.png)
+![Accuracy](../data/Census/figures/accuracy.png)
 
 ### A.3 Supporting Figures for Segmentation
 
@@ -738,26 +738,26 @@ The following sections present the demographic, economic, and socioeconomic feat
 
 #### A.3.1 Demographic Feature Distributions by Cluster
 
-![age Distribution Across Clusters](../../data/Census/figures/age.png)
+![age Distribution Across Clusters](../data/Census/figures/age.png)
 
-![sex Distribution Across Clusters](../../data/Census/figures/sex.png)
+![sex Distribution Across Clusters](../data/Census/figures/sex.png)
 
-![race Distribution Across Clusters](../../data/Census/figures/race.png)
+![race Distribution Across Clusters](../data/Census/figures/race.png)
 
 #### A.3.2 Economic Feature Distributions by Cluster
 
-![wage per hour Distribution Across Clusters](../../data/Census/figures/wage_per_hour.png)
+![wage per hour Distribution Across Clusters](../data/Census/figures/wage_per_hour.png)
 
-![capital gains Distribution Across Clusters](../../data/Census/figures/capital_gains.png)
+![capital gains Distribution Across Clusters](../data/Census/figures/capital_gains.png)
 
-![capital losses Distribution Across Clusters](../../data/Census/figures/capital_losses.png)
+![capital losses Distribution Across Clusters](../data/Census/figures/capital_losses.png)
 
-![dividends from stocks Distribution Across Clusters](../../data/Census/figures/dividends_from_stocks.png)
+![dividends from stocks Distribution Across Clusters](../data/Census/figures/dividends_from_stocks.png)
 
 #### A.3.3 Socioeconomic Feature Distributions by Cluster
 
-![class of worker Distribution Across Clusters](../../data/Census/figures/class_of_worker.png)
+![class of worker Distribution Across Clusters](../data/Census/figures/class_of_worker.png)
 
-![major occupation code Distribution Across Clusters](../../data/Census/figures/major_occupation_code.png)
+![major occupation code Distribution Across Clusters](../data/Census/figures/major_occupation_code.png)
 
-![major industry code Distribution Across Clusters](../../data/Census/figures/major_industry_code.png)
+![major industry code Distribution Across Clusters](../data/Census/figures/major_industry_code.png)
