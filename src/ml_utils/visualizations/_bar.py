@@ -7,8 +7,11 @@ import pandas as pd
 from ..utils import ensure_dict
 
 
-def _normalize(color, count):
-    default_color = plt.rcParams["axes.prop_cycle"].by_key()["color"][0]
+def _normalize_color(color, count):
+	# plt.rcParams["axes.prop_cycle"] now returns RGB(A) tuples instead of hex
+	# strings in newer Matplotlib versions, so we can no longer rely on this
+	#default_color = plt.rcParams["axes.prop_cycle"].by_key()["color"][0]
+	default_color = "tab:blue"
 
     if color is None:
         color = default_color
@@ -195,9 +198,9 @@ def bar_plot_core(
 	mins = _get_series(df, min_column)
 	maxs = _get_series(df, max_column)
 
-	colors = _normalize(colors, n_rows)
-	std_colors = _normalize(std_colors, n_rows)
-	minmax_colors = _normalize(minmax_colors, n_rows)
+	colors = _normalize_color(colors, n_rows)
+	std_colors = _normalize_color(std_colors, n_rows)
+	minmax_colors = _normalize_color(minmax_colors, n_rows)
 
 	#bar_kwargs = ensure_dict(bar_kwargs)
 	#std_errorbar_kwargs = ensure_dict(std_errorbar_kwargs)
