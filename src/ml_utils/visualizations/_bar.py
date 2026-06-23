@@ -13,34 +13,34 @@ def _normalize_color(color, count):
 	#default_color = plt.rcParams["axes.prop_cycle"].by_key()["color"][0]
 	default_color = "tab:blue"
 
-    if color is None:
-        color = default_color
+	if color is None:
+		color = default_color
 
-    if isinstance(color, pd.Series):
-        color = color.tolist()
+	if isinstance(color, pd.Series):
+		color = color.tolist()
 
-    if isinstance(color, np.ndarray):
-        color = color.tolist()
+	if isinstance(color, np.ndarray):
+		color = color.tolist()
 
-    if isinstance(color, str):
-        try:
-            color = plt.get_cmap(color)
-        except ValueError:
-            pass
+	if isinstance(color, str):
+		try:
+			color = plt.get_cmap(color)
+		except ValueError:
+			pass
 
-    if isinstance(color, plt.Colormap):
-        return color(np.linspace(0, 1, count))
+	if isinstance(color, plt.Colormap):
+		return color(np.linspace(0, 1, count))
 
-    if isinstance(color, (list, tuple)):
-        if len(color) == 0:
-            return [default_color] * count
+	if isinstance(color, (list, tuple)):
+		if len(color) == 0:
+			return [default_color] * count
 
-        if len(color) >= count:
-            return list(color[:count])
+		if len(color) >= count:
+			return list(color[:count])
 
-        return list(islice(cycle(color), count))
+		return list(islice(cycle(color), count))
 
-    return [color] * count
+	return [color] * count
 
 
 def _get_series(df, column):
