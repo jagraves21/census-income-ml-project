@@ -74,7 +74,7 @@ def plot_numeric_vs_target(
 		for c in classes
 	]
 
-	ax.boxplot(data, labels=classes, patch_artist=True)
+	ax.boxplot(data, tick_labels=classes, patch_artist=True)
 
 	title = f"{column} vs {target}"
 	if weight_column is not None:
