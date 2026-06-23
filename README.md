@@ -41,7 +41,7 @@ Final written report and source files.
 ### [docs/](./docs)
 Full experimental writeup.
 
-- [unabridged_report.md](./docs/unabridged_report.md) &mdash; complete experimental writeup with additional figures, results, and supporting analysis
+- [README.md](./docs/README.md) &mdash; complete experimental writeup with additional figures, results, and supporting analysis
 
 ### [requirements.txt](./requirements.txt)
 Python dependencies required to run the project.
