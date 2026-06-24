@@ -14,5 +14,5 @@ For example:
 cat segmentation-2026_06_22-03_06_42.joblib.part.* > segmentation-2026_06_22-03_06_42.joblib
 ```
 
-All model artifacts were generated using the package versions specified in the project's `requirements.txt`. Loading models with different package versions may produce warnings or unexpected behavior.
+All model artifacts were generated using the package versions specified in the project's [requirements.txt](../../../requirements.txt). Loading models with different package versions may produce warnings or unexpected behavior.
 
