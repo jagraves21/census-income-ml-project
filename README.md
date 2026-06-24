@@ -46,6 +46,10 @@ Full experimental writeup.
 ### [requirements.txt](./requirements.txt)
 Python dependencies required to run the project.
 
+## Reproducibility
+
+To improve reproducibility, all experiments were run with fixed random seeds where applicable. In addition, trained models used throughout the analysis have been saved in [data/Census/models/](./data/Census/models). Package versions in [requirements.txt](./requirements.txt) are pinned to the versions used during development, and using different package versions may produce different results or warnings when loading serialized models. One exception is the segmentation model, which is not included in the repository because the serialized artifact exceeds GitHub's file size limits. However, segmentation analysis should be reproducible from the provided notebooks if run in the documented environment.
+
 ## Usage
 
 Install dependencies:
@@ -66,3 +70,4 @@ The notebooks are largely independent, but [02-data-cleaning-and-preprocessing.i
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+
