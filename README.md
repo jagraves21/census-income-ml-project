@@ -6,15 +6,16 @@ It includes all source code, experiments, analysis notebooks, trained models, an
 
 ## Repository Structure
 
-### [data/](./data/)
-All datasets and associated artifacts are organized here. Each dataset has its own subdirectory containing raw data, processed data, models, results, and figures.
+### [report/](./report)
+Final written report and LaTeX source files.
 
-- [Census/](./data/Census) — current dataset used in this project
-  - [raw/](./data/Census/raw) &mdash; original provided dataset
-  - [processed/](./data/Census/processed) &mdash; cleaned and transformed datasets
-  - [figures/](./data/Census/figures) &mdash; figures generated during analysis
-  - [models/](./data/Census/models) &mdash; serialized trained models (`.joblib`)
-  - [results/](./data/Census/results) &mdash; csv outputs from evaluation and analysis
+- [main.pdf](./report/main.pdf) &mdash; final report
+- `*.tex` &mdash; LaTeX source files used to generate the report
+
+### [docs/](./docs)
+Full experimental writeup.
+
+- [README.md](./docs/README.md) &mdash; complete experimental writeup with additional figures, results, and supporting analysis
 
 ### [notebooks/](./notebooks)
 End-to-end workflow covering exploration, preprocessing, modeling, and reporting.
@@ -32,16 +33,15 @@ Custom Python packages shared across notebooks.
 - [ml_utils/](./src/ml_utils) &mdash; evaluation, modeling, preprocessing, and visualization utilities
 - [my_datasets/](./src/my_datasets) &mdash; dataset loading and management utilities
 
-### [report/](./report)
-Final written report and source files.
+### [data/](./data/)
+All datasets and associated artifacts are organized here. Each dataset has its own subdirectory containing raw data, processed data, models, results, and figures.
 
-- [main.pdf](./report/main.pdf) &mdash; final report
-- `*.tex` &mdash; LaTeX source files used to generate the report
-
-### [docs/](./docs)
-Full experimental writeup.
-
-- [README.md](./docs/README.md) &mdash; complete experimental writeup with additional figures, results, and supporting analysis
+- [Census/](./data/Census) — current dataset used in this project
+  - [raw/](./data/Census/raw) &mdash; original provided dataset
+  - [processed/](./data/Census/processed) &mdash; cleaned and transformed datasets
+  - [figures/](./data/Census/figures) &mdash; figures generated during analysis
+  - [models/](./data/Census/models) &mdash; serialized trained models (`.joblib`)
+  - [results/](./data/Census/results) &mdash; csv outputs from evaluation and analysis
 
 ### [requirements.txt](./requirements.txt)
 Python dependencies required to run the project.
