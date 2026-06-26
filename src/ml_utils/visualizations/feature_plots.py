@@ -32,12 +32,12 @@ def plot_column(
 		df[column].dtype in ["int64", "float64"]
 		and not numeric_categorical_columns
 	):
-		"""plot_numeric_distribution(
+		plot_numeric_distribution(
 			df,
 			column,
 			weight_column=weight_column,
 			**dist_kwargs
-		)"""
+		)
 
 		plot_numeric_vs_target(
 			df,
@@ -47,12 +47,12 @@ def plot_column(
 			**target_kwargs
 		)
 	else:
-		"""plot_categorical_distribution(
+		plot_categorical_distribution(
 			df,
 			column,
 			weight_column=weight_column,
 			**dist_kwargs
-		)"""
+		)
 
 		plot_categorical_vs_target(
 			df,
